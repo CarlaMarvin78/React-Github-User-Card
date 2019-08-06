@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Card from './Components/Card';
 
-function App() {
-  return (
+
+
+class App extends React.Component{
+  constructor () {
+    super ();
+    this.state={
+      user: {}
+       }
+    }
+    fetchUser = () => {
+      fetch('https://api.github.com/users/CarlaMarvin78')
+        
+      .then(response => {
+        return response.json();
+      })
+        .then(user => this.setState({user: user}))
+        .catch(err => {
+          console.log(err);
+          
+        });
+    };
+    componentDidMount() {
+      this.fetchUser();
+    }
+  render () {    
+    return  (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App">
+        Github Users
       </header>
+      <Card user={this.state.user}/>
     </div>
   );
+    }
 }
-
 export default App;
