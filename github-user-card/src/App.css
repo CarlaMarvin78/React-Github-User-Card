@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,15 +13,19 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body{
+  background-color:lightcyan;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+ margin-left:20px;
+ margin-top: 15px;
+  padding:10px;
+  width:400px;
+  height:500px;
+  border:1px solid orchid;
+}
+.card img{
+  width:150px;
 }
